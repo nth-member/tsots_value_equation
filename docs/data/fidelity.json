@@ -1,0 +1,195 @@
+{
+ "pyodide": "0.28.3",
+ "pyodide_python": "3.13.2",
+ "cpython": "3.12.3",
+ "math_function_last_digit_differences_in_200000_inputs": {
+  "log": 4,
+  "exp": 140,
+  "sin": 6168,
+  "cos": 6218,
+  "sqrt": 0
+ },
+ "summary": "1 of 5 runs were byte-for-byte identical. In the others the first difference was in the last binary digit (relative 1.8e-16), from the two engines' maths libraries (sin, cos and exp differ in the last digit for some inputs); because the model branches on thresholds, later values then diverge. Every acceptance-criterion status was the same in both engines.",
+ "cases": [
+  {
+   "settings": {
+    "variant": "A",
+    "seed": 0,
+    "population_size": 20,
+    "num_epochs": 40
+   },
+   "epochs": 40,
+   "identical": false,
+   "epochs_identical_from_start": 8,
+   "first_differing_epoch": 9,
+   "relative_difference_at_first_divergence": 1.4587020233762711e-16,
+   "mismatched_values": 2,
+   "max_relative_difference": 1.6673117401154773e-16,
+   "same_criteria_statuses": true,
+   "statuses": {
+    "calibration_improves": "PASS",
+    "equation_residual": "NOT_EVALUATED",
+    "fabrication_less_rewarded": "NOT_EVALUATED",
+    "handover_converges": "FAIL",
+    "ledger_integrity": "PASS",
+    "price_within_band": "FAIL",
+    "selflessness_tracks_truth": "NOT_EVALUATED",
+    "supply_stable": "NOT_EVALUATED"
+   },
+   "cpython_statuses": {
+    "calibration_improves": "PASS",
+    "equation_residual": "NOT_EVALUATED",
+    "fabrication_less_rewarded": "NOT_EVALUATED",
+    "handover_converges": "FAIL",
+    "ledger_integrity": "PASS",
+    "price_within_band": "FAIL",
+    "selflessness_tracks_truth": "NOT_EVALUATED",
+    "supply_stable": "NOT_EVALUATED"
+   }
+  },
+  {
+   "settings": {
+    "variant": "B",
+    "seed": 1,
+    "population_size": 30,
+    "num_epochs": 60,
+    "compare_honest": true
+   },
+   "epochs": 60,
+   "identical": false,
+   "epochs_identical_from_start": 31,
+   "first_differing_epoch": 32,
+   "relative_difference_at_first_divergence": 1.4005001271086232e-16,
+   "mismatched_values": 110,
+   "max_relative_difference": 2,
+   "same_criteria_statuses": true,
+   "statuses": {
+    "calibration_improves": "FAIL",
+    "equation_residual": "NOT_EVALUATED",
+    "fabrication_less_rewarded": "PASS",
+    "handover_converges": "FAIL",
+    "ledger_integrity": "PASS",
+    "price_within_band": "FAIL",
+    "selflessness_tracks_truth": "PASS",
+    "supply_stable": "NOT_EVALUATED"
+   },
+   "cpython_statuses": {
+    "calibration_improves": "FAIL",
+    "equation_residual": "NOT_EVALUATED",
+    "fabrication_less_rewarded": "PASS",
+    "handover_converges": "FAIL",
+    "ledger_integrity": "PASS",
+    "price_within_band": "FAIL",
+    "selflessness_tracks_truth": "PASS",
+    "supply_stable": "NOT_EVALUATED"
+   }
+  },
+  {
+   "settings": {
+    "variant": "A",
+    "seed": 2,
+    "population_size": 25,
+    "num_epochs": 50,
+    "claim_limit_scope": "phase_total",
+    "max_claimants": 10
+   },
+   "epochs": 50,
+   "identical": true,
+   "epochs_identical_from_start": 50,
+   "first_differing_epoch": null,
+   "relative_difference_at_first_divergence": 0,
+   "mismatched_values": 0,
+   "max_relative_difference": 0,
+   "same_criteria_statuses": true,
+   "statuses": {
+    "calibration_improves": "FAIL",
+    "equation_residual": "NOT_EVALUATED",
+    "fabrication_less_rewarded": "NOT_EVALUATED",
+    "handover_converges": "FAIL",
+    "ledger_integrity": "PASS",
+    "price_within_band": "FAIL",
+    "selflessness_tracks_truth": "PASS",
+    "supply_stable": "NOT_EVALUATED"
+   },
+   "cpython_statuses": {
+    "calibration_improves": "FAIL",
+    "equation_residual": "NOT_EVALUATED",
+    "fabrication_less_rewarded": "NOT_EVALUATED",
+    "handover_converges": "FAIL",
+    "ledger_integrity": "PASS",
+    "price_within_band": "FAIL",
+    "selflessness_tracks_truth": "PASS",
+    "supply_stable": "NOT_EVALUATED"
+   }
+  },
+  {
+   "settings": {
+    "variant": "A",
+    "seed": 0
+   },
+   "epochs": 200,
+   "identical": false,
+   "epochs_identical_from_start": 3,
+   "first_differing_epoch": 4,
+   "relative_difference_at_first_divergence": 1.8078491283569296e-16,
+   "mismatched_values": 1712,
+   "max_relative_difference": 2,
+   "same_criteria_statuses": true,
+   "statuses": {
+    "calibration_improves": "FAIL",
+    "equation_residual": "NOT_EVALUATED",
+    "fabrication_less_rewarded": "NOT_EVALUATED",
+    "handover_converges": "FAIL",
+    "ledger_integrity": "PASS",
+    "price_within_band": "FAIL",
+    "selflessness_tracks_truth": "PASS",
+    "supply_stable": "FAIL"
+   },
+   "cpython_statuses": {
+    "calibration_improves": "FAIL",
+    "equation_residual": "NOT_EVALUATED",
+    "fabrication_less_rewarded": "NOT_EVALUATED",
+    "handover_converges": "FAIL",
+    "ledger_integrity": "PASS",
+    "price_within_band": "FAIL",
+    "selflessness_tracks_truth": "PASS",
+    "supply_stable": "FAIL"
+   }
+  },
+  {
+   "settings": {
+    "variant": "B",
+    "seed": 0,
+    "compare_honest": true
+   },
+   "epochs": 200,
+   "identical": false,
+   "epochs_identical_from_start": 3,
+   "first_differing_epoch": 4,
+   "relative_difference_at_first_divergence": 1.8078491283569296e-16,
+   "mismatched_values": 1636,
+   "max_relative_difference": 2,
+   "same_criteria_statuses": true,
+   "statuses": {
+    "calibration_improves": "FAIL",
+    "equation_residual": "NOT_EVALUATED",
+    "fabrication_less_rewarded": "PASS",
+    "handover_converges": "FAIL",
+    "ledger_integrity": "PASS",
+    "price_within_band": "FAIL",
+    "selflessness_tracks_truth": "PASS",
+    "supply_stable": "PASS"
+   },
+   "cpython_statuses": {
+    "calibration_improves": "FAIL",
+    "equation_residual": "NOT_EVALUATED",
+    "fabrication_less_rewarded": "PASS",
+    "handover_converges": "FAIL",
+    "ledger_integrity": "PASS",
+    "price_within_band": "FAIL",
+    "selflessness_tracks_truth": "PASS",
+    "supply_stable": "PASS"
+   }
+  }
+ ]
+}

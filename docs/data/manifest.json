@@ -1,0 +1,26 @@
+{
+ "command": "python3 shula_simulation.py --variant both --epochs 200 --population 100 --seeds 0,1,2 --compare-honest",
+ "main": [
+  "A_seed0",
+  "A_seed1",
+  "A_seed2",
+  "B_seed0",
+  "B_seed1",
+  "B_seed2"
+ ],
+ "runs": [
+  "A_seed0",
+  "A_seed0_honest",
+  "A_seed1",
+  "A_seed1_honest",
+  "A_seed2",
+  "A_seed2_honest",
+  "B_seed0",
+  "B_seed0_honest",
+  "B_seed1",
+  "B_seed1_honest",
+  "B_seed2",
+  "B_seed2_honest"
+ ],
+ "simulator_sha256": "29c19cf6a2a7cf57d29f739cfd5c9f7fa9f2c5fcac3132d7ca7ebcb569e1927a"
+}

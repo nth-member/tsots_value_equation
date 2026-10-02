@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TSOTS value equation</title>
+<meta name="description" content="A synthetic, reproducible simulation of the value-chain equation as a currency, the Shula, run in the browser.">
+<style>
+:root{--plane:#f9f9f7;--surface:#fcfcfb;--ink:#0b0b0b;--ink-2:#52514e;--muted:#898781;
+  --line:#e1e0d9;--axis:#c3c2b7;--accent:#2a78d6;--pass:#1f7a3a;--fail:#b3261e;--na:#898781;--series-2:#c2410c}
+@media (prefers-color-scheme:dark){:root{--plane:#0d0d0d;--surface:#1a1a19;--ink:#ffffff;--ink-2:#c3c2b7;
+  --muted:#898781;--line:#2c2c2a;--axis:#383835;--accent:#3987e5;--pass:#4caf6a;--fail:#ef6b62;--series-2:#f08a4b}}
+[hidden]{display:none !important}
+*{box-sizing:border-box}
+html{background:var(--plane)}
+body{margin:0;background:var(--plane);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:980px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:26px;margin:0 0 4px}
+h2{font-size:19px;margin:28px 0 8px}
+h3{font-size:16px;margin:20px 0 6px}
+p{margin:6px 0 10px}
+.lede{color:var(--ink-2);margin:0 0 6px}
+.eq{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;color:var(--ink)}
+nav{display:flex;gap:6px;flex-wrap:wrap;margin:16px 0 4px;border-bottom:1px solid var(--line)}
+nav button{background:none;border:0;border-bottom:2px solid transparent;color:var(--ink-2);font:inherit;
+  padding:8px 10px;cursor:pointer}
+nav button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+section{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px;margin-top:14px}
+.note{color:var(--muted);font-size:13px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;font-size:13px;width:100%}
+th,td{border-bottom:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
+th{color:var(--ink-2);font-weight:600}
+td.num{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;text-align:right;white-space:nowrap}
+.badge{display:inline-block;white-space:nowrap;font:600 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;padding:3px 6px;border-radius:3px;border:1px solid}
+.PASS{color:var(--pass);border-color:var(--pass)}
+.FAIL{color:var(--fail);border-color:var(--fail)}
+.NOT_EVALUATED{color:var(--na);border-color:var(--na)}
+.controls{display:flex;gap:12px;flex-wrap:wrap;align-items:end;margin:8px 0}
+label.field{display:flex;flex-direction:column;font-size:12px;color:var(--ink-2);gap:3px;min-width:140px;flex:1 1 140px}
+input,select,textarea{font:13px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink);background:var(--plane);
+  border:1px solid var(--axis);border-radius:4px;padding:5px 6px;width:100%}
+label.check{display:flex;gap:6px;align-items:center;font-size:13px}
+label.check input{width:auto}
+button.primary{background:var(--accent);color:#fff;border:0;border-radius:4px;padding:8px 16px;font:600 14px system-ui,sans-serif;cursor:pointer}
+button.primary:disabled{opacity:.5;cursor:default}
+button.link{background:none;border:0;color:var(--accent);font:inherit;padding:0;cursor:pointer;text-decoration:underline}
+details{margin:8px 0}
+summary{cursor:pointer;color:var(--ink-2)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px 12px;margin-top:8px}
+.status{font-size:13px;color:var(--ink-2);min-height:20px}
+canvas{width:100%;height:300px;display:block}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink-2);margin-top:4px}
+.legend i{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:5px}
+a{color:var(--accent)}
+.md pre{background:var(--plane);border:1px solid var(--line);border-radius:4px;padding:8px;overflow-x:auto;font-size:12px}
+.md code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px}
+.md table{margin:8px 0}
+</style>
+</head>
+<body>
+<main>
+<h1>TSOTS value equation</h1>
+<p class="lede">A synthetic, reproducible simulation of the value-chain equation as a currency, the Shula:</p>
+<p class="eq">TSOTS ≡ ∂(M·V) − ∂(P·O) = ΔG + ΔA + ΔI</p>
+<p class="note">The simulator tests accounting and scenarios with synthetic people and acts. A run that passes its criteria does not establish that the mechanism works in practice.</p>
+
+<nav role="tablist">
+  <button role="tab" aria-selected="true" data-tab="saved">Saved results</button>
+  <button role="tab" aria-selected="false" data-tab="run">Run in the browser</button>
+  <button role="tab" aria-selected="false" data-tab="design">Design and assumptions</button>
+</nav>
+
+<div id="tab-saved">
+  <section>
+    <h2>Acceptance criteria</h2>
+    <p class="note" id="saved-command"></p>
+    <div class="scroll"><table id="criteria-table"></table></div>
+  </section>
+  <section>
+    <h2>Measured values</h2>
+    <div class="scroll"><table id="measured-table"></table></div>
+  </section>
+  <section>
+    <h2>Epoch series</h2>
+    <div class="controls">
+      <label class="field">Series<select id="saved-series"></select></label>
+      <label class="field">Seed<select id="saved-seed"></select></label>
+      <label class="check"><input type="checkbox" id="saved-honest"> Include the matched honest-service runs</label>
+    </div>
+    <canvas id="saved-chart"></canvas>
+    <div class="legend" id="saved-legend"></div>
+    <p class="note" id="saved-scale"></p>
+  </section>
+</div>
+
+<div id="tab-run" hidden>
+  <section>
+    <h2>Run the simulator</h2>
+    <p class="note">The unchanged <code>shula_simulation.py</code> runs here in Python compiled to WebAssembly (Pyodide). Nothing is sent to a server. The first run downloads about 12 MB.</p>
+    <p class="status" id="engine-status">Loading the Python engine…</p>
+    <form id="run-form" hidden>
+      <div class="grid" id="main-fields"></div>
+      <label class="check" style="margin-top:10px"><input type="checkbox" id="compare-honest"> Also run the matched honest-service reference (doubles the run time; evaluates the fabrication criterion)</label>
+      <details><summary>All settings</summary><div class="grid" id="all-fields"></div></details>
+      <div class="controls">
+        <button class="primary" type="submit" id="run-button">Run</button>
+        <button class="link" type="button" id="reset-button">Restore defaults</button>
+        <span class="status" id="run-status"></span>
+      </div>
+    </form>
+  </section>
+  <section id="run-results" hidden>
+    <h2>Result</h2>
+    <p class="note" id="run-summary"></p>
+    <div class="scroll"><table id="run-criteria"></table></div>
+    <h3>Epoch series</h3>
+    <div class="controls"><label class="field">Series<select id="run-series"></select></label></div>
+    <canvas id="run-chart"></canvas>
+    <div class="legend" id="run-legend"></div>
+    <p class="note" id="run-scale"></p>
+    <div class="controls">
+      <button class="link" type="button" id="download-csv">Download epochs.csv</button>
+      <button class="link" type="button" id="download-json">Download the full result (JSON)</button>
+    </div>
+  </section>
+</div>
+
+<div id="tab-design" hidden>
+  <section>
+    <h2>Documents</h2>
+    <p><a href="flowchart.pdf">Corrected simulation flowchart (PDF, three pages)</a> ·
+       <a href="py/shula_simulation.py">shula_simulation.py</a> ·
+       <a href="py/test_shula_simulation.py">test_shula_simulation.py</a> ·
+       <a href="data/report.md">report.md</a></p>
+    <p class="note" id="fidelity-note"></p>
+  </section>
+  <section class="md" id="readme"></section>
+  <section class="md" id="notes"></section>
+</div>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>

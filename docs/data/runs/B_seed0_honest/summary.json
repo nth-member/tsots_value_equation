@@ -1,0 +1,58 @@
+{
+  "price_within_band": {
+    "status": "FAIL",
+    "detail": "Only observed phase-two trades count; carried-forward prices do not.",
+    "observed_epochs": 194,
+    "coverage": 1.0,
+    "minimum": 0.04203329438227857,
+    "maximum": 47.91461408822132,
+    "band": [
+      0.5,
+      2.0
+    ]
+  },
+  "supply_stable": {
+    "status": "FAIL",
+    "detail": "Declared horizon and growth/collapse bounds, not merely nonnegative supply.",
+    "funded_epochs": 200,
+    "minimum_epochs": 200,
+    "maximum_multiple": 1047.4838246772833,
+    "minimum_multiple": 1.0,
+    "final_multiple": 992.6218593598106
+  },
+  "calibration_improves": {
+    "status": "PASS",
+    "detail": "Prediction loss against delayed simulated outcomes; first versus last sample blocks.",
+    "samples": 21670,
+    "early_loss": 0.06797082546742927,
+    "late_loss": 0.06697222890010034
+  },
+  "selflessness_tracks_truth": {
+    "status": "PASS",
+    "detail": "Finalized person/observation-epoch classifications with coverage of unresolved cases.",
+    "classification_error": 0.04920246012300615,
+    "coverage": 0.99995,
+    "tolerance": 0.1
+  },
+  "handover_converges": {
+    "status": "PASS",
+    "detail": "Full takeover through measured agreement, with pauses/reversion.",
+    "final_weight": 1.0
+  },
+  "ledger_integrity": {
+    "status": "PASS",
+    "detail": "Every epoch reconciled; full gazette state replay matched.",
+    "max_balance_error": 2.9103830456733704e-11
+  },
+  "equation_residual": {
+    "status": "NOT_EVALUATED",
+    "detail": "Caps/guards can break exact equality; no acceptable residual limit was invented.",
+    "maximum_absolute": 4294.408968675748,
+    "configured_limit": null,
+    "constrained_epochs": 184
+  },
+  "fabrication_less_rewarded": {
+    "status": "NOT_EVALUATED",
+    "detail": "Requires matched honest service; low ring capture alone is insufficient."
+  }
+}

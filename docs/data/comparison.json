@@ -1,0 +1,386 @@
+[
+  {
+    "run": "A_seed0",
+    "criteria": {
+      "price_within_band": {
+        "status": "FAIL",
+        "detail": "Only observed phase-two trades count; carried-forward prices do not.",
+        "observed_epochs": 194,
+        "coverage": 1.0,
+        "minimum": 0.043717191538175236,
+        "maximum": 278.6842190829657,
+        "band": [
+          0.5,
+          2.0
+        ]
+      },
+      "supply_stable": {
+        "status": "FAIL",
+        "detail": "Declared horizon and growth/collapse bounds, not merely nonnegative supply.",
+        "funded_epochs": 200,
+        "minimum_epochs": 200,
+        "maximum_multiple": 10165.096328209498,
+        "minimum_multiple": 1.0,
+        "final_multiple": 10165.096328209498
+      },
+      "calibration_improves": {
+        "status": "FAIL",
+        "detail": "Prediction loss against delayed simulated outcomes; first versus last sample blocks.",
+        "samples": 21473,
+        "early_loss": 0.11380207012299287,
+        "late_loss": 0.1164014388054822
+      },
+      "selflessness_tracks_truth": {
+        "status": "PASS",
+        "detail": "Finalized person/observation-epoch classifications with coverage of unresolved cases.",
+        "classification_error": 0.08031925641543747,
+        "coverage": 0.9898,
+        "tolerance": 0.1
+      },
+      "handover_converges": {
+        "status": "FAIL",
+        "detail": "Full takeover through measured agreement, with pauses/reversion.",
+        "final_weight": 0.39999999999999997
+      },
+      "ledger_integrity": {
+        "status": "PASS",
+        "detail": "Every epoch reconciled; full gazette state replay matched.",
+        "max_balance_error": 2.3283064365386963e-10
+      },
+      "equation_residual": {
+        "status": "NOT_EVALUATED",
+        "detail": "Caps/guards can break exact equality; no acceptable residual limit was invented.",
+        "maximum_absolute": 167642.30026438745,
+        "configured_limit": null,
+        "constrained_epochs": 196
+      },
+      "fabrication_less_rewarded": {
+        "status": "PASS",
+        "detail": "Same cohort, seed, effort and outside resources; gross mint rewards, not full economic profit.",
+        "ring_participants": 10,
+        "ring_gross_mint": 175382.17422333587,
+        "honest_gross_mint": 196169.3234718818
+      }
+    }
+  },
+  {
+    "run": "A_seed1",
+    "criteria": {
+      "price_within_band": {
+        "status": "FAIL",
+        "detail": "Only observed phase-two trades count; carried-forward prices do not.",
+        "observed_epochs": 194,
+        "coverage": 1.0,
+        "minimum": 0.04634345072421061,
+        "maximum": 255.09999721091796,
+        "band": [
+          0.5,
+          2.0
+        ]
+      },
+      "supply_stable": {
+        "status": "FAIL",
+        "detail": "Declared horizon and growth/collapse bounds, not merely nonnegative supply.",
+        "funded_epochs": 200,
+        "minimum_epochs": 200,
+        "maximum_multiple": 10366.347855918548,
+        "minimum_multiple": 1.0,
+        "final_multiple": 10366.347855918548
+      },
+      "calibration_improves": {
+        "status": "PASS",
+        "detail": "Prediction loss against delayed simulated outcomes; first versus last sample blocks.",
+        "samples": 21473,
+        "early_loss": 0.12365096467279982,
+        "late_loss": 0.12033160175167078
+      },
+      "selflessness_tracks_truth": {
+        "status": "PASS",
+        "detail": "Finalized person/observation-epoch classifications with coverage of unresolved cases.",
+        "classification_error": 0.0853707819761568,
+        "coverage": 0.9898,
+        "tolerance": 0.1
+      },
+      "handover_converges": {
+        "status": "FAIL",
+        "detail": "Full takeover through measured agreement, with pauses/reversion.",
+        "final_weight": 0.3
+      },
+      "ledger_integrity": {
+        "status": "PASS",
+        "detail": "Every epoch reconciled; full gazette state replay matched.",
+        "max_balance_error": 3.4924596548080444e-10
+      },
+      "equation_residual": {
+        "status": "NOT_EVALUATED",
+        "detail": "Caps/guards can break exact equality; no acceptable residual limit was invented.",
+        "maximum_absolute": 128235.42032670943,
+        "configured_limit": null,
+        "constrained_epochs": 197
+      },
+      "fabrication_less_rewarded": {
+        "status": "PASS",
+        "detail": "Same cohort, seed, effort and outside resources; gross mint rewards, not full economic profit.",
+        "ring_participants": 10,
+        "ring_gross_mint": 189163.02680402301,
+        "honest_gross_mint": 225066.26188902667
+      }
+    }
+  },
+  {
+    "run": "A_seed2",
+    "criteria": {
+      "price_within_band": {
+        "status": "FAIL",
+        "detail": "Only observed phase-two trades count; carried-forward prices do not.",
+        "observed_epochs": 194,
+        "coverage": 1.0,
+        "minimum": 0.05613793440196076,
+        "maximum": 319.87108491091107,
+        "band": [
+          0.5,
+          2.0
+        ]
+      },
+      "supply_stable": {
+        "status": "FAIL",
+        "detail": "Declared horizon and growth/collapse bounds, not merely nonnegative supply.",
+        "funded_epochs": 200,
+        "minimum_epochs": 200,
+        "maximum_multiple": 11329.668126247418,
+        "minimum_multiple": 1.0,
+        "final_multiple": 11329.668126247418
+      },
+      "calibration_improves": {
+        "status": "PASS",
+        "detail": "Prediction loss against delayed simulated outcomes; first versus last sample blocks.",
+        "samples": 21473,
+        "early_loss": 0.11005910896184891,
+        "late_loss": 0.10500815114743246
+      },
+      "selflessness_tracks_truth": {
+        "status": "PASS",
+        "detail": "Finalized person/observation-epoch classifications with coverage of unresolved cases.",
+        "classification_error": 0.07869879274637571,
+        "coverage": 0.98985,
+        "tolerance": 0.1
+      },
+      "handover_converges": {
+        "status": "FAIL",
+        "detail": "Full takeover through measured agreement, with pauses/reversion.",
+        "final_weight": 0.44999999999999996
+      },
+      "ledger_integrity": {
+        "status": "PASS",
+        "detail": "Every epoch reconciled; full gazette state replay matched.",
+        "max_balance_error": 2.3283064365386963e-10
+      },
+      "equation_residual": {
+        "status": "NOT_EVALUATED",
+        "detail": "Caps/guards can break exact equality; no acceptable residual limit was invented.",
+        "maximum_absolute": 146127.96023736353,
+        "configured_limit": null,
+        "constrained_epochs": 199
+      },
+      "fabrication_less_rewarded": {
+        "status": "PASS",
+        "detail": "Same cohort, seed, effort and outside resources; gross mint rewards, not full economic profit.",
+        "ring_participants": 10,
+        "ring_gross_mint": 157234.24072001912,
+        "honest_gross_mint": 194691.8021105457
+      }
+    }
+  },
+  {
+    "run": "B_seed0",
+    "criteria": {
+      "price_within_band": {
+        "status": "FAIL",
+        "detail": "Only observed phase-two trades count; carried-forward prices do not.",
+        "observed_epochs": 194,
+        "coverage": 1.0,
+        "minimum": 0.043717191538175236,
+        "maximum": 42.619814328956394,
+        "band": [
+          0.5,
+          2.0
+        ]
+      },
+      "supply_stable": {
+        "status": "PASS",
+        "detail": "Declared horizon and growth/collapse bounds, not merely nonnegative supply.",
+        "funded_epochs": 200,
+        "minimum_epochs": 200,
+        "maximum_multiple": 696.0099414201893,
+        "minimum_multiple": 1.0,
+        "final_multiple": 665.4217401459867
+      },
+      "calibration_improves": {
+        "status": "FAIL",
+        "detail": "Prediction loss against delayed simulated outcomes; first versus last sample blocks.",
+        "samples": 21473,
+        "early_loss": 0.11380207012299287,
+        "late_loss": 0.1164014388054822
+      },
+      "selflessness_tracks_truth": {
+        "status": "PASS",
+        "detail": "Finalized person/observation-epoch classifications with coverage of unresolved cases.",
+        "classification_error": 0.08031925641543747,
+        "coverage": 0.9898,
+        "tolerance": 0.1
+      },
+      "handover_converges": {
+        "status": "FAIL",
+        "detail": "Full takeover through measured agreement, with pauses/reversion.",
+        "final_weight": 0.39999999999999997
+      },
+      "ledger_integrity": {
+        "status": "PASS",
+        "detail": "Every epoch reconciled; full gazette state replay matched.",
+        "max_balance_error": 4.3655745685100555e-11
+      },
+      "equation_residual": {
+        "status": "NOT_EVALUATED",
+        "detail": "Caps/guards can break exact equality; no acceptable residual limit was invented.",
+        "maximum_absolute": 2941.8099310548755,
+        "configured_limit": null,
+        "constrained_epochs": 175
+      },
+      "fabrication_less_rewarded": {
+        "status": "PASS",
+        "detail": "Same cohort, seed, effort and outside resources; gross mint rewards, not full economic profit.",
+        "ring_participants": 10,
+        "ring_gross_mint": 18177.170996036086,
+        "honest_gross_mint": 29868.1825381863
+      }
+    }
+  },
+  {
+    "run": "B_seed1",
+    "criteria": {
+      "price_within_band": {
+        "status": "FAIL",
+        "detail": "Only observed phase-two trades count; carried-forward prices do not.",
+        "observed_epochs": 194,
+        "coverage": 1.0,
+        "minimum": 0.052150320153229124,
+        "maximum": 36.245416671499136,
+        "band": [
+          0.5,
+          2.0
+        ]
+      },
+      "supply_stable": {
+        "status": "PASS",
+        "detail": "Declared horizon and growth/collapse bounds, not merely nonnegative supply.",
+        "funded_epochs": 200,
+        "minimum_epochs": 200,
+        "maximum_multiple": 688.9507639316461,
+        "minimum_multiple": 1.0,
+        "final_multiple": 688.9507639316461
+      },
+      "calibration_improves": {
+        "status": "PASS",
+        "detail": "Prediction loss against delayed simulated outcomes; first versus last sample blocks.",
+        "samples": 21473,
+        "early_loss": 0.12365096467279982,
+        "late_loss": 0.12033160175167078
+      },
+      "selflessness_tracks_truth": {
+        "status": "PASS",
+        "detail": "Finalized person/observation-epoch classifications with coverage of unresolved cases.",
+        "classification_error": 0.0853707819761568,
+        "coverage": 0.9898,
+        "tolerance": 0.1
+      },
+      "handover_converges": {
+        "status": "FAIL",
+        "detail": "Full takeover through measured agreement, with pauses/reversion.",
+        "final_weight": 0.3
+      },
+      "ledger_integrity": {
+        "status": "PASS",
+        "detail": "Every epoch reconciled; full gazette state replay matched.",
+        "max_balance_error": 2.9103830456733704e-11
+      },
+      "equation_residual": {
+        "status": "NOT_EVALUATED",
+        "detail": "Caps/guards can break exact equality; no acceptable residual limit was invented.",
+        "maximum_absolute": 2155.357645596251,
+        "configured_limit": null,
+        "constrained_epochs": 182
+      },
+      "fabrication_less_rewarded": {
+        "status": "PASS",
+        "detail": "Same cohort, seed, effort and outside resources; gross mint rewards, not full economic profit.",
+        "ring_participants": 10,
+        "ring_gross_mint": 20807.566613645144,
+        "honest_gross_mint": 21913.64442361234
+      }
+    }
+  },
+  {
+    "run": "B_seed2",
+    "criteria": {
+      "price_within_band": {
+        "status": "FAIL",
+        "detail": "Only observed phase-two trades count; carried-forward prices do not.",
+        "observed_epochs": 194,
+        "coverage": 1.0,
+        "minimum": 0.062038056200679446,
+        "maximum": 52.43770111326996,
+        "band": [
+          0.5,
+          2.0
+        ]
+      },
+      "supply_stable": {
+        "status": "PASS",
+        "detail": "Declared horizon and growth/collapse bounds, not merely nonnegative supply.",
+        "funded_epochs": 200,
+        "minimum_epochs": 200,
+        "maximum_multiple": 829.0657055129528,
+        "minimum_multiple": 1.0,
+        "final_multiple": 730.7734594981205
+      },
+      "calibration_improves": {
+        "status": "PASS",
+        "detail": "Prediction loss against delayed simulated outcomes; first versus last sample blocks.",
+        "samples": 21473,
+        "early_loss": 0.11005910896184891,
+        "late_loss": 0.10500815114743246
+      },
+      "selflessness_tracks_truth": {
+        "status": "PASS",
+        "detail": "Finalized person/observation-epoch classifications with coverage of unresolved cases.",
+        "classification_error": 0.07869879274637571,
+        "coverage": 0.98985,
+        "tolerance": 0.1
+      },
+      "handover_converges": {
+        "status": "FAIL",
+        "detail": "Full takeover through measured agreement, with pauses/reversion.",
+        "final_weight": 0.44999999999999996
+      },
+      "ledger_integrity": {
+        "status": "PASS",
+        "detail": "Every epoch reconciled; full gazette state replay matched.",
+        "max_balance_error": 5.820766091346741e-11
+      },
+      "equation_residual": {
+        "status": "NOT_EVALUATED",
+        "detail": "Caps/guards can break exact equality; no acceptable residual limit was invented.",
+        "maximum_absolute": 3394.099052421934,
+        "configured_limit": null,
+        "constrained_epochs": 181
+      },
+      "fabrication_less_rewarded": {
+        "status": "PASS",
+        "detail": "Same cohort, seed, effort and outside resources; gross mint rewards, not full economic profit.",
+        "ring_participants": 10,
+        "ring_gross_mint": 19253.662420939916,
+        "honest_gross_mint": 25643.769025302725
+      }
+    }
+  }
+]
