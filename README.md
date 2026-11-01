@@ -49,6 +49,20 @@ node fidelity.mjs           # browser engine against CPython; writes docs/data/f
 
 The browser engine and CPython run the same code. Short runs are byte-for-byte identical. In longer runs the first difference appears in the last binary digit (a relative difference near 10⁻¹⁶), because the two engines' maths libraries round `sin`, `cos` and `exp` differently for some inputs; as the model branches on thresholds, later values then diverge. In every compared configuration each acceptance-criterion status was the same in both engines. `docs/data/fidelity.json` records the measurements.
 
+## Refreshing the sites
+
+One command, on the computer that keeps the sites, refreshes every 3PP-NOAH site whose data changes: JOMO
+SFO-WAM's feeds, REVOTT stamps, then GDELT into the GDELT day sources, REVOTT, the nth member,
+H-Gematria/ASCII and IPPROTO.
+
+```bash
+cd ~ && ./refresh-all.sh --push     # refresh and publish every updatable site
+cd ~ && ./refresh-all.sh            # refresh and commit, push nothing
+cd ~ && ./refresh-all.sh --check    # what GDELT has that is new; changes nothing
+```
+
+JOMO SFO-WAM's feeds and REVOTT stamps also refresh themselves every 15 minutes, from cron.
+
 ## The nth-member sites
 
 | site | repository | what it is |
