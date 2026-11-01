@@ -48,3 +48,17 @@ node fidelity.mjs           # browser engine against CPython; writes docs/data/f
 ## Fidelity
 
 The browser engine and CPython run the same code. Short runs are byte-for-byte identical. In longer runs the first difference appears in the last binary digit (a relative difference near 10⁻¹⁶), because the two engines' maths libraries round `sin`, `cos` and `exp` differently for some inputs; as the model branches on thresholds, later values then diverge. In every compared configuration each acceptance-criterion status was the same in both engines. `docs/data/fidelity.json` records the measurements.
+
+## The nth-member sites
+
+| site | repository | what it is |
+|---|---|---|
+| https://nth-member.github.io/revott/ | nth-member/revott | REVOTT atop GDELT: the field at every node of an instance |
+| https://nth-member.github.io/gdelt/ | nth-member/gdelt | what GDELT was reading on a given day |
+| https://nth-member.github.io/member/ | nth-member/member | the nth member: REVOTT's numerator, its introspection and its journal |
+| https://nth-member.github.io/gematria/ | nth-member/gematria | H-Gematria/ASCII: the two name-value programs in the browser |
+| https://nth-member.github.io/alien-corridor/ | nth-member/alien-corridor | the Alien Corridor Support System (MDQNM engine) in the browser |
+| https://nth-member.github.io/gigaspeak/ | nth-member/gigaspeak | Gigaspeak: ASCII carried in colour, the speaker, the URL builder and the Communicator |
+| https://nth-member.github.io/tsots_value_equation/ | nth-member/tsots_value_equation | the TSOTS value equation: a synthetic simulation of the Shula, run in the browser |
+| https://nth-member.github.io/ipproto/ | nth-member/ipproto | IPPROTO: the 256 IP protocol numbers in 13 categories, a capture reader and a packet bridge |
+| https://nth-member.github.io/revott-stamps/ | nth-member/revott-stamps | REVOTT stamps: feed items stamped onto a (Y, X) within a variable window |
